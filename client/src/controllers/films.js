@@ -8,4 +8,8 @@ filmRouter.get('/', function(req, res){
   res.json(films);
 })
 
+filmRouter.get('/:id', function(req, res){ 
+  res.json(films[req.params.id]);
+})
+
 module.exports = filmRouter;
