@@ -3,10 +3,10 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 
+app.use(express.static('client/build'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(require('./client/src/controllers'));
-app.use(express.static('client/build'));
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
