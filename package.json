@@ -1,0 +1,20 @@
+{
+  "name": "review_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "bundle": "webpack -w",
+    "test": "mocha client/src/models/specs --reporter nyan"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "webpack": "^2.2.0-rc.0"
+  }
+}
