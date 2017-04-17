@@ -1,5 +1,6 @@
 var Films = require('../models/films');
 var Film = require('../models/film');
+var Review = require('../models/review');
 
 var films = new Films();
 var express = require('express');
@@ -28,5 +29,11 @@ filmRouter.delete('/:id', function(req, res){
   films.splice(req.params.id, 1);
   res.json(films);
 })
+
+filmRouter.post('/:id/review', function(req, res){
+  var review = new Review(req.body);
+  films[req.params.id].addReview(review);
+  res.json(films);
+});
 
 module.exports = filmRouter;
